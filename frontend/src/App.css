@@ -1,0 +1,29 @@
+body {
+  background-color: #3f2b7c;
+}
+a {
+  color: white !important;
+}
+a.btn.primary {
+  @apply font-semibold bg-[#ea4888] hover:bg-[#ff5398] ring-1 ring-[#f14389];
+}
+.btn {
+  color: white !important;
+  @apply rounded h-16 p-4 bg-[#3f2b7c] shadow-sm m-2 hover:bg-[#553aa5] flex items-center;
+}
+.glass {
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border: .1px solid rgba(255, 255, 255, 0.125);
+  /* clip-path: polygon(
+    5% 0,
+    95% 0,
+    100% 50%,
+    95% 100%,
+    80% 100%,
+    20% 100%,
+    5% 100%,
+    0 50%
+  ); */
+}
