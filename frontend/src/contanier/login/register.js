@@ -95,7 +95,7 @@ export default function SignIn() {
 :null
 }
           <Box component="form" noValidate sx={{ mt: 1 }}>
-            
+          <br/>         
 
 <TextField
               margin="normal"
@@ -211,61 +211,7 @@ export default function SignIn() {
     
     <option value="Homme">Homme</option>
     </Form.Select>
-    <TextField
-              margin="normal"
-             
-              fullWidth
-              id="Nom"
-              label="Nom"
-              name="Nom"
-              autoComplete="Nom"
-              autoFocus
-              onChange={(e)=>{
-                setNom(e.target.value)
-                setMessageInValidNom("")
-              }}
-             
-            
-            />
-
-<font color="red">  {messageInValidNom}</font>
-<TextField
-              margin="normal"
-             
-              fullWidth
-              id="Prénom"
-              label="Prénom"
-              name="Prénom"
-              autoComplete="Prénom"
-              autoFocus
-              onChange={(e)=>{
-                setNom(e.target.value)
-                setMessageInValidPrénom("")
-              }}
-             
-            
-            />
-
-<font color="red">  {messageInValidPrénom}</font>
-<TextField
-              margin="normal"
-             
-              fullWidth
-              id="Email"
-              label="Email"
-              name="Email"
-              autoComplete="Email"
-              autoFocus
-              onChange={(e)=>{
-                setNom(e.target.value)
-                setMessageInValidEmail("")
-              }}
-             
-            
-            />
-
-<font color="red">  {messageInValidEmail}</font>
-
+    
 <br/>
 
 
