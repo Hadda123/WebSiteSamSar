@@ -12,7 +12,7 @@ import { useLocalStorage } from "react-use-storage";
 import Loader from "../../../verification/loader";
 import Alert from "../../../verification/alert";
 import Navbar from "../../../components/navbar";
-import { Form, InputGroup } from "react-bootstrap";
+import { Form, FormControl, InputGroup } from "react-bootstrap";
 
 import RadioGroup from "@mui/material/RadioGroup";
 function Copyright(props) {
@@ -167,6 +167,10 @@ export default function SignIn() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar />
+      <br/>
+         <br/>
+         <br/>
+         <card>  
       <Container component="main" maxWidth="xs">
         <CssBaseline />
 
@@ -269,7 +273,6 @@ onChange={(e) => {
 })}
 </Form.Select>
 
-<br/>
 <font color="red">  {messageInValidGouvernorat}</font><br/>
 <div>
 {idGouvernorat != "0" ? (
@@ -331,18 +334,13 @@ onChange={(e) => {
             <br/>
             <font color="red">  {messageInValidDescription}</font>
           
-            <table>
-              <tr>
-                <td>
-                  <TextField
-                    type="number"
-                    className=""
-                    margin="normal"
-                    required
-                    style={{ width: "400px" }}
-                    id="Prix"
-                    label="Prix"
-                    name="Prix"
+            <InputGroup className="mb-3">
+    <FormControl
+      placeholder="Prix"
+      aria-label="Prix"
+      aria-describedby="basic-addon2"
+      type="number"
+      name="Prix"
                     autoComplete="Prix"
                     autoFocus
                     onChange={(e) => {
@@ -350,16 +348,15 @@ onChange={(e) => {
                       
                 setMessageInValidPrix("")
                     }}
-                  />
-                  <br/>
-            {messageInValidPrix}
-                </td>
-                <td>
-                  <InputGroup.Text style={{ height: "50px" }}>
-                    DT
-                  </InputGroup.Text>
-                </td>
-                <td>
+    />
+    <InputGroup.Text id="basic-addon2"> DT</InputGroup.Text>
+  </InputGroup>
+
+  
+                 
+  <font color="red"> {messageInValidPrix} </font>
+               
+              
                 <TextField
                     type="string"
                     className=""
@@ -377,64 +374,47 @@ onChange={(e) => {
                       
                     }}
                   />
-                   </td>
-              </tr>
-            </table>
-          
-            <table>
-              <tr>
-                <td>
-                  <TextField
-                   type="number"
-                    className=""
-                    margin="normal"
-                    required
-                    style={{ width: "400px" }}
-                    id="Metrage"
-                    label="Metrage"
-                    name="Metrage"
+
+
+<InputGroup className="mb-3">
+    <FormControl
+      placeholder="Metrage"
+      aria-label="Metrage"
+      aria-describedby="basic-addon2"
+      type="number"
+      name="Metrage"
                     autoComplete="Metrage"
                     autoFocus
                     onChange={(e) => {
                       setMetrage(e.target.value);
+                      
+                setMessageInValidMetrage("")
                     }}
-                  />
-                  <br/>
-            {messageInValidMetrage}
-                </td>
-                <td>
-                  <InputGroup.Text style={{ height: "50px" }}>
-                    m²
-                  </InputGroup.Text>
-                </td>
-                </tr>
-                <tr>
-                <td>
-                <TextField
-                 type="number"
-                    className=""
-                    margin="normal"
-                    defaultValue="0"
-                    style={{ width: "400px" }}
-                    id="surfaceterrain"
-                    label="surface terrain"
-                    name="surfaceterrain"
+    />
+    <InputGroup.Text id="basic-addon2">  m²</InputGroup.Text>
+  </InputGroup>
+
+              
+            
+  <font color="red"> {messageInValidMetrage}  </font>
+              
+<InputGroup className="mb-3">
+    <FormControl
+      placeholder="surfaceterrain"
+      aria-label="surfaceterrain"
+      aria-describedby="basic-addon2"
+      type="number"
+      name="surfaceterrain"
                     autoComplete="surfaceterrain"
                     autoFocus
                     onChange={(e) => {
                       setSurfaceterrain(e.target.value);
+                
                     }}
-                  />
-                  </td>
-                   <td>
-                   <InputGroup.Text style={{ height: "50px" }}>
-                    m²
-                  </InputGroup.Text>
-                </td>
-                  
-              </tr>
-            </table>
-
+    />
+    <InputGroup.Text id="basic-addon2">  m²</InputGroup.Text>
+  </InputGroup> 
+                
                     
             {categorie.map((categories) => {
               if(categories._id === idCategorie   && categories.champObligatoire === "Oui"){
@@ -442,39 +422,29 @@ onChange={(e) => {
                 return (
                   
                   <div>
-                
-
-            <table>
-              <tr>
-                <td>
-                  <TextField
-                   type="number"
-                    className=" disabled:bg-opacity-40"
-                    margin="normal"
-                    style={{ width: "400px" }}
-                    id="surfacehabitable"
-                    
-                    label="surfacehabitable"
-                    name="surfacehabitable"
+                    <InputGroup className="mb-3">
+    <FormControl
+      placeholder="surfacehabitable"
+      aria-label="surfacehabitable"
+      aria-describedby="basic-addon2"
+      type="number"
+      name="surfacehabitable"
                     autoComplete="surfacehabitable"
                     autoFocus
                     onChange={(e) => {
                       setSurfacehabitable(e.target.value);
                       
                 setMessageInValidSurfaceHabitable("")
-
                     }}
-                  />
-                  <br/>
+    />
+    <InputGroup.Text id="basic-addon2">   m²</InputGroup.Text>
+  </InputGroup>
+
+
+                 
             {messageInValidSurfaceHabitable}
-                </td>
-                <td>
-                  <InputGroup.Text style={{ height: "50px" }}>
-                    m²
-                  </InputGroup.Text>
-                </td>
-              </tr>
-            </table>
+                
+                
            
 
 <TextField
@@ -776,6 +746,7 @@ onChange={(e) => {
 
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      </card>  
     </ThemeProvider>
   );
 }
